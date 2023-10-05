@@ -16,7 +16,7 @@ const brainEvenGame = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no"');
 
   for (let i = 0; i < numberOfAttempts; i += 1) {
-    const randomInteger = Math.floor(Math.random() * 10) + 1;
+    const randomInteger = Math.floor(Math.random() * 100) + 1;
 
     if (randomInteger % 2 === 0) {
       rightAnswer = 'yes';
