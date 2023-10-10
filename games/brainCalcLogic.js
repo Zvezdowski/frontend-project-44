@@ -15,7 +15,7 @@ const brainCalc = () => {
     const operator = BL.getRandomOperator();
     const randomExpression = (`${firstInteger} ${operator} ${secondInteger}`);
 
-    let rightAnswer;
+    let rightAnswer = '';
     switch (operator) {
       case '+':
         rightAnswer = (firstInteger + secondInteger);
@@ -29,6 +29,8 @@ const brainCalc = () => {
       default:
         rightAnswer = 'switch error, check source';
     }
+
+    rightAnswer = `${rightAnswer}`;
 
     BL.askQuestion(randomExpression);
     const userAnswer = BL.takeAnswer();

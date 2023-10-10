@@ -45,6 +45,6 @@ export const askQuestion = (question) => {
 };
 
 export const takeAnswer = () => {
-  const answer = parseInt(readlineSync.question('Your answer: '), 10);
+  const answer = readlineSync.question('Your answer: ');
   return answer;
 };
