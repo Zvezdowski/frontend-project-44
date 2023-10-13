@@ -8,4 +8,4 @@ BrainCalc demo:
 [![asciicast](https://asciinema.org/a/oQX6E47IokqRXdu6y7lvKJJNk.svg)](https://asciinema.org/a/oQX6E47IokqRXdu6y7lvKJJNk)
 
 BrainGCD demo: 
-[![asciicast](https://asciinema.org/a/MhxMFekCN6e7MrVrutZIeerGG.svg)](https://asciinema.org/a/MhxMFekCN6e7MrVrutZIeerGG)
+[![asciicast](https://asciinema.org/a/t9Yx9womLOTXzY1S0UvF1yCYM.svg)](https://asciinema.org/a/t9Yx9womLOTXzY1S0UvF1yCYM)

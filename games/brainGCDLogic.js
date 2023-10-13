@@ -3,7 +3,7 @@ import * as BL from '../src/index.js';
 const brainGCDGame = () => {
   let winsCounter = 0;
   const userName = BL.greeting();
-
+  console.log('Find the greatest common divisor of given numbers.');
   for (let i = 0; i < BL.numberOfAttempts; i += 1) {
     const firstInteger = BL.getRandomInteger();
     const secondInteger = BL.getRandomInteger();
