@@ -48,3 +48,8 @@ export const takeAnswer = () => {
   const answer = readlineSync.question('Your answer: ');
   return answer;
 };
+
+export const gameOver = (userAnswer, rightAnswer, userName) => {
+  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
+  console.log(`Let's try again, ${userName}!`);
+};

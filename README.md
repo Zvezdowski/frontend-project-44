@@ -9,3 +9,6 @@ BrainCalc demo:
 
 BrainGCD demo: 
 [![asciicast](https://asciinema.org/a/t9Yx9womLOTXzY1S0UvF1yCYM.svg)](https://asciinema.org/a/t9Yx9womLOTXzY1S0UvF1yCYM)
+
+BrainProgression demo:
+[![asciicast](https://asciinema.org/a/QlxxCVHM6b4sswAFKg7m29hmr.svg)](https://asciinema.org/a/QlxxCVHM6b4sswAFKg7m29hmr)
