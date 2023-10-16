@@ -18,8 +18,8 @@ export const getRandomInteger = () => {
 //   return answer;
 // };
 
-export const winDetector = (winsCounter, userName) => {
-  const attemptsToWin = 3;
+export const winDetector = (winsCounter, userName, attemptsToWin) => {
+  console.log('Correct!');
   if (winsCounter === attemptsToWin) {
     console.log(`Congratulations, ${userName}!`);
   }

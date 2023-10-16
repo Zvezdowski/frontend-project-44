@@ -22,8 +22,7 @@ const brainProgressionGame = () => {
 
     if (userAnswer === missingValue) {
       winsCounter += 1;
-      console.log('Correct!');
-      BL.winDetector(winsCounter, userName);
+      BL.winDetector(winsCounter, userName, BL.numberOfAttempts);
     } else {
       BL.gameOver(userAnswer, missingValue, userName);
       break;

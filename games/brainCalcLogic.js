@@ -1,4 +1,3 @@
-// import readlineSync from 'readline-sync';
 import * as BL from '../src/index.js'; //       BL means BrainLogic
 
 const brainCalc = () => {
@@ -13,40 +12,27 @@ const brainCalc = () => {
     const firstInteger = BL.getRandomInteger();
     const secondInteger = BL.getRandomInteger();
     const operator = BL.getRandomOperator();
-    const randomExpression = (`${firstInteger} ${operator} ${secondInteger}`);
 
-    let rightAnswer = '';
-    switch (operator) {
-      case '+':
-        rightAnswer = (firstInteger + secondInteger);
-        break;
-      case '-':
-        rightAnswer = (firstInteger - secondInteger);
-        break;
-      case '*':
-        rightAnswer = (firstInteger * secondInteger);
-        break;
-      default:
-        rightAnswer = 'switch error, check source';
+    let rightAnswer;
+    if (operator === '+') {
+      rightAnswer = firstInteger + secondInteger;
+    } else if (operator === '-') {
+      rightAnswer = firstInteger - secondInteger;
+    } else if (operator === '*') {
+      rightAnswer = firstInteger * secondInteger;
     }
 
-    rightAnswer = `${rightAnswer}`;
-
-    BL.askQuestion(randomExpression);
+    BL.askQuestion(`${firstInteger} ${operator} ${secondInteger}`);
     const userAnswer = BL.takeAnswer();
 
-    if (userAnswer === rightAnswer) {
-      console.log('Correct!');
+    if (userAnswer === rightAnswer.toString()) {
       winsCounter += 1;
-      if (winsCounter === BL.numberOfAttempts) {
-        console.log(`Congratulations, ${userName}!`);
-        break;
-      }
+      BL.winDetector(winsCounter, userName, BL.numberOfAttempts);
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
-      console.log(`Let's try again, ${userName}!`);
+      BL.gameOver(userAnswer, rightAnswer, userName);
       break;
     }
   }
 };
+
 export default brainCalc;

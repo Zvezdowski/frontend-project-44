@@ -20,8 +20,7 @@ const brainPrimeGame = () => {
 
     if (userAnswer === rightAnswer) {
       winsCounter += 1;
-      console.log('Correct!');
-      BL.winDetector(winsCounter, userName);
+      BL.winDetector(winsCounter, userName, BL.numberOfAttempts);
     } else {
       BL.gameOver(userAnswer, rightAnswer, userName);
       break;

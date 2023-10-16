@@ -12,19 +12,18 @@ const brainGCDGame = () => {
     let GCD;
 
     for (let j = 1; j <= maxGCD; j += 1) {
-      if (firstInteger % j === 0 && secondInteger % j === 0) {
+      if ((firstInteger % j === 0) && (secondInteger % j === 0)) {
         GCD = j;
       }
     }
 
     BL.askQuestion(`${firstInteger} ${secondInteger}`);
     const answer = BL.takeAnswer();
-    if (answer === `${GCD}`) {
+    if (answer === GCD.toString()) {
       winsCounter += 1;
-      console.log('Correct!');
-      BL.winDetector(winsCounter, userName);
+      BL.winDetector(winsCounter, userName, BL.numberOfAttempts);
     } else {
-      console.log(`'${answer}' is wrong answer ;(, Correct answer was '${GCD}'`);
+      BL.gameOver(answer, GCD, userName);
       break;
     }
   }
