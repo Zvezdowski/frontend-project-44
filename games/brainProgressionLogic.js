@@ -1,10 +1,9 @@
 import * as BL from '../src/index.js';
 
 const brainProgressionGame = () => {
-  let winsCounter = 0;
   const userName = BL.greeting();
   console.log('What number is missing in the progression?');
-  for (let i = 0; i < BL.numberOfAttempts; i += 1) {
+  for (let i = 1; i <= BL.numberOfAttempts; i += 1) {
     const progressionLength = Math.floor(Math.random() * 6) + 5;
     const missingElementIndex = Math.floor(Math.random() * progressionLength);
     const progressionStep = BL.getRandomInteger();
@@ -20,13 +19,12 @@ const brainProgressionGame = () => {
     BL.askQuestion(progression.join(' '));
     const userAnswer = BL.takeAnswer();
 
-    if (userAnswer === missingValue) {
-      winsCounter += 1;
-      BL.winDetector(winsCounter, userName, BL.numberOfAttempts);
-    } else {
+    if (userAnswer !== missingValue) {
       BL.gameOver(userAnswer, missingValue, userName);
       break;
     }
+
+    BL.winDetector(i, userName, BL.numberOfAttempts);
   }
 };
 export default brainProgressionGame;

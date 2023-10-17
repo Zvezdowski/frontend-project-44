@@ -64,3 +64,12 @@ export const findGCD = (firstInteger, secondInteger) => {
   }
   return GCD;
 };
+
+export const isPrime = (theNumber) => {
+  for (let j = 2; j < theNumber; j += 1) {
+    if (theNumber % j === 0) {
+      return 'no';
+    }
+  }
+  return 'yes';
+};

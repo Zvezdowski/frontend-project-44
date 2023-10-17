@@ -7,11 +7,9 @@ const brainEvenGame = () => {
 
   let rightAnswer = '';
 
-  let winsCounter = 0;
-
   console.log('Answer "yes" if the number is even, otherwise answer "no"');
 
-  for (let i = 0; i < BL.numberOfAttempts; i += 1) {
+  for (let i = 1; i <= BL.numberOfAttempts; i += 1) {
     const randomInteger = BL.getRandomInteger();
 
     if (randomInteger % 2 === 0) {
@@ -19,20 +17,16 @@ const brainEvenGame = () => {
     } else if (randomInteger % 2 === 1) {
       rightAnswer = 'no';
     }
+
     BL.askQuestion(randomInteger);
+    const userAnswer = BL.takeAnswer();
 
-    const answer = BL.takeAnswer();
-
-    if (answer === rightAnswer) {
-      winsCounter += 1;
-      console.log('Correct!');
-
-      BL.winDetector(winsCounter, userName);
-    } else {
-      winsCounter = 0;
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'`);
+    if (userAnswer !== rightAnswer) {
+      BL.gameOver(userAnswer, rightAnswer, userName);
       break;
     }
+
+    BL.winDetector(i, userName, BL.numberOfAttempts);
   }
 };
 
