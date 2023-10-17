@@ -53,3 +53,14 @@ export const gameOver = (userAnswer, rightAnswer, userName) => {
   console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
   console.log(`Let's try again, ${userName}!`);
 };
+
+export const findGCD = (firstInteger, secondInteger) => {
+  const maxPossibleGCD = Math.min(firstInteger, secondInteger);
+  let GCD;
+  for (let j = 1; j <= maxPossibleGCD; j += 1) {
+    if ((firstInteger % j === 0) && (secondInteger % j === 0)) {
+      GCD = j;
+    }
+  }
+  return GCD;
+};

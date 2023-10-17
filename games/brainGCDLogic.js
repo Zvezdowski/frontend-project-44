@@ -1,31 +1,23 @@
 import * as BL from '../src/index.js';
 
 const brainGCDGame = () => {
-  let winsCounter = 0;
   const userName = BL.greeting();
   console.log('Find the greatest common divisor of given numbers.');
-  for (let i = 0; i < BL.numberOfAttempts; i += 1) {
+  for (let i = 1; i <= BL.numberOfAttempts; i += 1) {
     const firstInteger = BL.getRandomInteger();
     const secondInteger = BL.getRandomInteger();
 
-    const maxGCD = Math.min(firstInteger, secondInteger);
-    let GCD;
-
-    for (let j = 1; j <= maxGCD; j += 1) {
-      if ((firstInteger % j === 0) && (secondInteger % j === 0)) {
-        GCD = j;
-      }
-    }
+    const rightAnswer = BL.findGCD(firstInteger, secondInteger);
 
     BL.askQuestion(`${firstInteger} ${secondInteger}`);
-    const answer = BL.takeAnswer();
-    if (answer === GCD.toString()) {
-      winsCounter += 1;
-      BL.winDetector(winsCounter, userName, BL.numberOfAttempts);
-    } else {
-      BL.gameOver(answer, GCD, userName);
+    const userAnswer = parseInt(BL.takeAnswer(), 10);
+
+    if (userAnswer !== rightAnswer) {
+      BL.gameOver(userAnswer, rightAnswer, userName);
       break;
     }
+
+    BL.winDetector(i, userName, BL.numberOfAttempts);
   }
 };
 
