@@ -5,11 +5,11 @@
 
 Installation commands step by step:
 
-a) git clone https://github.com/Zvezdowski/frontend-project-44.git
+`a) git clone https://github.com/Zvezdowski/frontend-project-44.git
 
 b) make install
 
-c) npm link
+c) npm link`
 
 Installation example:
 https://asciinema.org/a/0BRqUSfUp8NqSC3THE8B6wdUN
