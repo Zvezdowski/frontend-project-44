@@ -13,11 +13,6 @@ export const getRandomInteger = () => {
   return randomInteger;
 };
 
-// export const getAnswer = (expression) => {
-//   const answer = readlineSync.question(`Question: ${expression}`);
-//   return answer;
-// };
-
 export const winDetector = (winsCounter, userName, attemptsToWin) => {
   console.log('Correct!');
   if (winsCounter === attemptsToWin) {
@@ -41,7 +36,7 @@ export const getRandomOperator = () => {
 };
 
 export const askQuestion = (question) => {
-  console.log('Question: ', question);
+  console.log(`Question: ${question}`);
 };
 
 export const takeAnswer = () => {
