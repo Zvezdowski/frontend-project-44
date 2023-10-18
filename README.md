@@ -13,6 +13,15 @@
 
 [Installation example](https://asciinema.org/a/0BRqUSfUp8NqSC3THE8B6wdUN)
 
+### Usage:
+
+`brain-games`
+`brain-even`
+`brain-calc`
+`brain-gcd`
+`brain-progression`
+`brain-prime`
+
 [BrainEven demo](https://asciinema.org/a/kNn1nRmdsSYLh0K8uYEAoxLVy)
 
 [BrainCalc demo](https://asciinema.org/a/oQX6E47IokqRXdu6y7lvKJJNk)
