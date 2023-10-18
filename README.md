@@ -11,20 +11,14 @@ Installation commands step by step:
 
 `npm link`
 
-Installation example:
-https://asciinema.org/a/0BRqUSfUp8NqSC3THE8B6wdUN
+[Installation example](https://asciinema.org/a/0BRqUSfUp8NqSC3THE8B6wdUN)
 
-BrainEven demo:
-https://asciinema.org/a/kNn1nRmdsSYLh0K8uYEAoxLVy
+[BrainEven demo](https://asciinema.org/a/kNn1nRmdsSYLh0K8uYEAoxLVy)
 
-BrainCalc demo:
-https://asciinema.org/a/oQX6E47IokqRXdu6y7lvKJJNk
+[BrainCalc demo](https://asciinema.org/a/oQX6E47IokqRXdu6y7lvKJJNk)
 
-BrainGCD demo: 
-https://asciinema.org/a/t9Yx9womLOTXzY1S0UvF1yCYM
+[BrainGCD demo](https://asciinema.org/a/t9Yx9womLOTXzY1S0UvF1yCYM)
 
-BrainProgression demo
-https://asciinema.org/a/QlxxCVHM6b4sswAFKg7m29hmr
+[BrainProgression demo](https://asciinema.org/a/QlxxCVHM6b4sswAFKg7m29hmr)
 
-BrainPrime demo
-https://asciinema.org/a/tJrcy1DcknoGVLTw9zeC2FkeZ
+[BrainPrime demo](https://asciinema.org/a/tJrcy1DcknoGVLTw9zeC2FkeZ)
