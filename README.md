@@ -3,7 +3,7 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/52911390035689c80d58/maintainability)](https://codeclimate.com/github/Zvezdowski/frontend-project-44/maintainability)
 
-Installation commands step by step:
+### Installation commands step by step:
 
 `git clone https://github.com/Zvezdowski/frontend-project-44.git`
 
