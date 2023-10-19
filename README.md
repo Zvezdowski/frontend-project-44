@@ -1,3 +1,7 @@
+### Brain Games
+
+Brain Games is compilation of five different math games. Challenge your brain.
+
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Zvezdowski/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/Zvezdowski/frontend-project-44/actions)
 
