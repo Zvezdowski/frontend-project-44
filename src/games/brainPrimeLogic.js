@@ -1,4 +1,4 @@
-import * as BL from '../src/index.js';
+import * as BL from '../index.js';
 
 const brainPrimeGame = () => {
   const userName = BL.greeting();

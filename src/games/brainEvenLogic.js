@@ -1,4 +1,4 @@
-import * as BL from '../src/index.js';
+import * as BL from '../index.js';
 
 const brainEvenGame = () => {
   console.log('Welcome to the Brain Games!');

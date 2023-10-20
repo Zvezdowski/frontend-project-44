@@ -1,4 +1,4 @@
-import * as BL from '../src/index.js'; //       BL means BrainLogic
+import * as BL from '../index.js'; //       BL means BrainLogic
 
 const brainCalc = () => {
   const userName = BL.greeting();
