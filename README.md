@@ -7,6 +7,10 @@ Brain Games is compilation of five different math games. Challenge your brain.
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/52911390035689c80d58/maintainability)](https://codeclimate.com/github/Zvezdowski/frontend-project-44/maintainability)
 
+### Systen requirements
+
+node.js: v20.7.0 
+
 ### Installation commands step by step:
 
 `git clone https://github.com/Zvezdowski/frontend-project-44.git`
@@ -26,12 +30,17 @@ Brain Games is compilation of five different math games. Challenge your brain.
 `brain-progression`
 `brain-prime`
 
-[BrainEven demo](https://asciinema.org/a/kNn1nRmdsSYLh0K8uYEAoxLVy)
+BrainEven demo
+[![asciicast](https://asciinema.org/a/kNn1nRmdsSYLh0K8uYEAoxLVy.svg)](https://asciinema.org/a/kNn1nRmdsSYLh0K8uYEAoxLVy)
 
-[BrainCalc demo](https://asciinema.org/a/oQX6E47IokqRXdu6y7lvKJJNk)
+BrainCalc demo
+[![asciicast](https://asciinema.org/a/oQX6E47IokqRXdu6y7lvKJJNk.svg)](https://asciinema.org/a/oQX6E47IokqRXdu6y7lvKJJNk)
 
-[BrainGCD demo](https://asciinema.org/a/t9Yx9womLOTXzY1S0UvF1yCYM)
+BrainGCD demo
+[![asciicast](https://asciinema.org/a/t9Yx9womLOTXzY1S0UvF1yCYM.svg)](https://asciinema.org/a/t9Yx9womLOTXzY1S0UvF1yCYM)
 
-[BrainProgression demo](https://asciinema.org/a/QlxxCVHM6b4sswAFKg7m29hmr)
+BrainProgression demo
+[![asciicast](https://asciinema.org/a/QlxxCVHM6b4sswAFKg7m29hmr.svg)](https://asciinema.org/a/QlxxCVHM6b4sswAFKg7m29hmr)
 
-[BrainPrime demo](https://asciinema.org/a/tJrcy1DcknoGVLTw9zeC2FkeZ)
+BrainPrime demo
+[![asciicast](https://asciinema.org/a/tJrcy1DcknoGVLTw9zeC2FkeZ.svg)](https://asciinema.org/a/tJrcy1DcknoGVLTw9zeC2FkeZ)
