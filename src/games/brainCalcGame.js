@@ -1,5 +1,20 @@
 import * as BL from '../index.js'; //       BL means BrainLogic
 
+const getRandomOperator = () => {
+  const randomIndex = Math.floor(Math.random() * 3) + 1;
+
+  switch (randomIndex) {
+    case 1:
+      return '+';
+    case 2:
+      return '-';
+    case 3:
+      return '*';
+    default:
+      return 'switch error';
+  }
+};
+
 const launchBrainCalcGame = () => {
   const userName = BL.greet();
 
@@ -9,7 +24,7 @@ const launchBrainCalcGame = () => {
   for (let i = 1; i <= BL.numberOfAttempts; i += 1) {
     const firstInteger = BL.getRandomInteger();
     const secondInteger = BL.getRandomInteger();
-    const operator = BL.getRandomOperator();
+    const operator = getRandomOperator();
 
     let rightAnswer;
     if (operator === '+') {
