@@ -1,7 +1,7 @@
 import * as BL from '../index.js';
 
-const brainGCDGame = () => {
-  const userName = BL.greeting();
+const launchBrainGCDGame = () => {
+  const userName = BL.greet();
   console.log('Find the greatest common divisor of given numbers.');
   for (let i = 1; i <= BL.numberOfAttempts; i += 1) {
     const firstInteger = BL.getRandomInteger();
@@ -13,12 +13,12 @@ const brainGCDGame = () => {
     const userAnswer = parseInt(BL.takeAnswer(), 10);
 
     if (userAnswer !== rightAnswer) {
-      BL.gameOver(userAnswer, rightAnswer, userName);
+      BL.detectGameOver(userAnswer, rightAnswer, userName);
       break;
     }
 
-    BL.winDetector(i, userName, BL.numberOfAttempts);
+    BL.detectWin(i, userName, BL.numberOfAttempts);
   }
 };
 
-export default brainGCDGame;
+export default launchBrainGCDGame;

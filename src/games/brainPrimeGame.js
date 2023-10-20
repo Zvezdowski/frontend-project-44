@@ -1,7 +1,7 @@
 import * as BL from '../index.js';
 
-const brainPrimeGame = () => {
-  const userName = BL.greeting();
+const launchBrainPrimeGame = () => {
+  const userName = BL.greet();
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
   for (let i = 1; i <= BL.numberOfAttempts; i += 1) {
     const theNumber = BL.getRandomInteger();
@@ -12,12 +12,12 @@ const brainPrimeGame = () => {
     const userAnswer = BL.takeAnswer();
 
     if (userAnswer !== rightAnswer) {
-      BL.gameOver(userAnswer, rightAnswer, userName);
+      BL.detectGameOver(userAnswer, rightAnswer, userName);
       break;
     }
 
-    BL.winDetector(i, userName, BL.numberOfAttempts);
+    BL.detectWin(i, userName, BL.numberOfAttempts);
   }
 };
 
-export default brainPrimeGame;
+export default launchBrainPrimeGame;

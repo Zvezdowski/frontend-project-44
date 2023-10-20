@@ -1,7 +1,7 @@
 import * as BL from '../index.js';
 
-const brainProgressionGame = () => {
-  const userName = BL.greeting();
+const launchBrainProgressionGame = () => {
+  const userName = BL.greet();
   console.log('What number is missing in the progression?');
   for (let i = 1; i <= BL.numberOfAttempts; i += 1) {
     const progressionLength = Math.floor(Math.random() * 6) + 5;
@@ -20,11 +20,11 @@ const brainProgressionGame = () => {
     const userAnswer = BL.takeAnswer();
 
     if (userAnswer !== missingValue) {
-      BL.gameOver(userAnswer, missingValue, userName);
+      BL.detectGameOver(userAnswer, missingValue, userName);
       break;
     }
 
-    BL.winDetector(i, userName, BL.numberOfAttempts);
+    BL.detectWin(i, userName, BL.numberOfAttempts);
   }
 };
-export default brainProgressionGame;
+export default launchBrainProgressionGame;

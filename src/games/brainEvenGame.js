@@ -1,9 +1,9 @@
 import * as BL from '../index.js';
 
-const brainEvenGame = () => {
+const launchBrainEvenGame = () => {
   console.log('Welcome to the Brain Games!');
 
-  const userName = BL.greeting();
+  const userName = BL.greet();
 
   let rightAnswer = '';
 
@@ -22,12 +22,12 @@ const brainEvenGame = () => {
     const userAnswer = BL.takeAnswer();
 
     if (userAnswer !== rightAnswer) {
-      BL.gameOver(userAnswer, rightAnswer, userName);
+      BL.detectGameOver(userAnswer, rightAnswer, userName);
       break;
     }
 
-    BL.winDetector(i, userName, BL.numberOfAttempts);
+    BL.detectWin(i, userName, BL.numberOfAttempts);
   }
 };
 
-export default brainEvenGame;
+export default launchBrainEvenGame;

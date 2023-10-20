@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-export const greeting = () => {
+export const greet = () => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   return userName;
@@ -13,7 +13,7 @@ export const getRandomInteger = () => {
   return randomInteger;
 };
 
-export const winDetector = (winsCounter, userName, attemptsToWin) => {
+export const detectWin = (winsCounter, userName, attemptsToWin) => {
   console.log('Correct!');
   if (winsCounter === attemptsToWin) {
     console.log(`Congratulations, ${userName}!`);
@@ -44,7 +44,7 @@ export const takeAnswer = () => {
   return answer;
 };
 
-export const gameOver = (userAnswer, rightAnswer, userName) => {
+export const detectGameOver = (userAnswer, rightAnswer, userName) => {
   console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
   console.log(`Let's try again, ${userName}!`);
 };

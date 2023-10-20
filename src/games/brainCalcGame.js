@@ -1,7 +1,7 @@
 import * as BL from '../index.js'; //       BL means BrainLogic
 
-const brainCalc = () => {
-  const userName = BL.greeting();
+const launchBrainCalcGame = () => {
+  const userName = BL.greet();
 
   const mainQuestion = 'What is the result of the expression?';
   console.log(mainQuestion);
@@ -25,12 +25,12 @@ const brainCalc = () => {
     const userAnswer = BL.takeAnswer();
 
     if (userAnswer !== rightAnswer) {
-      BL.gameOver(userAnswer, rightAnswer, userName);
+      BL.detectGameOver(userAnswer, rightAnswer, userName);
       break;
     }
 
-    BL.winDetector(i, userName, BL.numberOfAttempts);
+    BL.detectWin(i, userName, BL.numberOfAttempts);
   }
 };
 
-export default brainCalc;
+export default launchBrainCalcGame;
