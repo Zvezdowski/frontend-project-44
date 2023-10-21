@@ -33,3 +33,18 @@ export const detectGameOver = (userAnswer, rightAnswer, userName) => {
   console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
   console.log(`Let's try again, ${userName}!`);
 };
+
+export const launchGameCore = (mainQuestion, questsAndAns) => {
+  const userName = greet();
+  console.log(mainQuestion);
+  for (let i = 1; i <= numberOfAttempts; i += 1) {
+    askQuestion(questsAndAns[0][i - 1]);
+    const userAnswer = takeAnswer();
+    if (userAnswer === questsAndAns[1][i - 1]) {
+      detectWin(i, userName, numberOfAttempts);
+    } else {
+      detectGameOver(userAnswer, questsAndAns[1][i - 1], userName);
+      break;
+    }
+  }
+};

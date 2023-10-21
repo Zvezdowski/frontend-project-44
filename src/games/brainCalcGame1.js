@@ -1,7 +1,5 @@
 import * as BL from '../index.js'; //       BL means BrainLogic
 
-const mainQuestion = 'What is the result of the expression?';
-
 const getRandomOperator = () => {
   const randomIndex = Math.floor(Math.random() * 3) + 1;
 
@@ -17,9 +15,13 @@ const getRandomOperator = () => {
   }
 };
 
-const genQuestsAndAns = () => {
-  const questsAndAns = [[], []];
-  for (let i = 0; i < BL.numberOfAttempts; i += 1) {
+const launchBrainCalcGame = () => {
+  const userName = BL.greet();
+
+  const mainQuestion = 'What is the result of the expression?';
+  console.log(mainQuestion);
+
+  for (let i = 1; i <= BL.numberOfAttempts; i += 1) {
     const firstInteger = BL.getRandomInteger();
     const secondInteger = BL.getRandomInteger();
     const operator = getRandomOperator();
@@ -32,17 +34,18 @@ const genQuestsAndAns = () => {
     } else if (operator === '*') {
       rightAnswer = firstInteger * secondInteger;
     }
-    const question = `${firstInteger} ${operator} ${secondInteger}`;
-    questsAndAns[0].push(question);
-    questsAndAns[1].push(rightAnswer.toString());
+
+    rightAnswer = rightAnswer.toString();
+    BL.askQuestion(`${firstInteger} ${operator} ${secondInteger}`);
+    const userAnswer = BL.takeAnswer();
+
+    if (userAnswer !== rightAnswer) {
+      BL.detectGameOver(userAnswer, rightAnswer, userName);
+      break;
+    }
+
+    BL.detectWin(i, userName, BL.numberOfAttempts);
   }
-  return questsAndAns;
-};
-
-const questsAndAns = genQuestsAndAns();
-
-const launchBrainCalcGame = () => {
-  BL.launchGameCore(mainQuestion, questsAndAns);
 };
 
 export default launchBrainCalcGame;
