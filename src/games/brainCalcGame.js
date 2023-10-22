@@ -18,7 +18,7 @@ const getRandomOperator = () => {
 };
 
 const genQuestsAndAns = () => {
-  const questsAndAns = [[], []];
+  const questsAndAns = BL.matrixDefinition;
   for (let i = 0; i < BL.numberOfAttempts; i += 1) {
     const firstInteger = BL.getRandomInteger();
     const secondInteger = BL.getRandomInteger();

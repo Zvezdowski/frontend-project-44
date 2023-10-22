@@ -1,5 +1,8 @@
 import * as BL from '../index.js';
 
+const mainQuestion = 'Find the greatest common divisor of given numbers.';
+
+
 const findGcd = (firstInteger, secondInteger) => {
   const maxPossibleGcd = Math.min(firstInteger, secondInteger);
   let gcd;
@@ -11,25 +14,23 @@ const findGcd = (firstInteger, secondInteger) => {
   return gcd;
 };
 
-const launchBrainGCDGame = () => {
-  const userName = BL.greet();
-  console.log('Find the greatest common divisor of given numbers.');
-  for (let i = 1; i <= BL.numberOfAttempts; i += 1) {
+const genQuestsAndAns = () => {
+  const questsAndAns = BL.matrixDefinition;
+  for (let i = 0; i < BL.numberOfAttempts; i += 1) {
     const firstInteger = BL.getRandomInteger();
     const secondInteger = BL.getRandomInteger();
-
     const rightAnswer = findGcd(firstInteger, secondInteger);
-
-    BL.askQuestion(`${firstInteger} ${secondInteger}`);
-    const userAnswer = parseInt(BL.takeAnswer(), 10);
-
-    if (userAnswer !== rightAnswer) {
-      BL.detectGameOver(userAnswer, rightAnswer, userName);
-      break;
-    }
-
-    BL.detectWin(i, userName, BL.numberOfAttempts);
+    const question = (`${firstInteger} ${secondInteger}`);
+    questsAndAns[0].push(question);
+    questsAndAns[1].push(rightAnswer.toString());
   }
+  return questsAndAns;
+};
+
+const questsAndAns = genQuestsAndAns();
+
+const launchBrainGCDGame = () => {
+  BL.launchGameCore(mainQuestion, questsAndAns);
 };
 
 export default launchBrainGCDGame;

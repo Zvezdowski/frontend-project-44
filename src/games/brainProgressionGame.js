@@ -1,9 +1,10 @@
 import * as BL from '../index.js';
 
-const launchBrainProgressionGame = () => {
-  const userName = BL.greet();
-  console.log('What number is missing in the progression?');
-  for (let i = 1; i <= BL.numberOfAttempts; i += 1) {
+const mainQuestion = 'What number is missing in the progression?';
+
+const genQuestsAndAns = () => {
+  const questsAndAns = BL.matrixDefinition;
+  for (let i = 0; i < BL.numberOfAttempts; i += 1) {
     const progressionLength = Math.floor(Math.random() * 6) + 5;
     const missingElementIndex = Math.floor(Math.random() * progressionLength);
     const progressionStep = BL.getRandomInteger();
@@ -13,18 +14,21 @@ const launchBrainProgressionGame = () => {
       progression.push(progression[j - 1] + progressionStep);
     }
 
-    const missingValue = progression[missingElementIndex].toString(10);
+    const rightAnswer = progression[missingElementIndex].toString(10);
     progression[missingElementIndex] = '..';
 
-    BL.askQuestion(progression.join(' '));
-    const userAnswer = BL.takeAnswer();
+    const question = progression.join(' ');
 
-    if (userAnswer !== missingValue) {
-      BL.detectGameOver(userAnswer, missingValue, userName);
-      break;
-    }
-
-    BL.detectWin(i, userName, BL.numberOfAttempts);
+    questsAndAns[0].push(question);
+    questsAndAns[1].push(rightAnswer.toString());
   }
+  return questsAndAns;
 };
+
+const questsAndAns = genQuestsAndAns();
+
+const launchBrainProgressionGame = () => {
+  BL.launchGameCore(mainQuestion, questsAndAns);
+};
+
 export default launchBrainProgressionGame;

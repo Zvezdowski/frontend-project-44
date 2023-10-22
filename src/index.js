@@ -8,6 +8,8 @@ export const greet = () => {
 
 export const numberOfAttempts = 3;
 
+export const matrixDefinition = [[], []];
+
 export const getRandomInteger = () => {
   const randomInteger = Math.floor(Math.random() * 100) + 1;
   return randomInteger;
