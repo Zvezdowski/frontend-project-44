@@ -2,7 +2,6 @@ import * as BL from '../index.js';
 
 const mainQuestion = 'Find the greatest common divisor of given numbers.';
 
-
 const findGcd = (firstInteger, secondInteger) => {
   const maxPossibleGcd = Math.min(firstInteger, secondInteger);
   let gcd;
