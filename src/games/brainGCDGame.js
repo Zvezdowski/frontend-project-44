@@ -15,7 +15,7 @@ const findGcd = (firstInteger, secondInteger) => {
 
 const genQuestsAndAns = () => {
   const questsAndAns = BL.matrixDefinition;
-  for (let i = 0; i < BL.numberOfAttempts; i += 1) {
+  for (let i = 0; i <= BL.lastLevelIndex; i += 1) {
     const firstInteger = BL.getRandomInteger();
     const secondInteger = BL.getRandomInteger();
     const rightAnswer = findGcd(firstInteger, secondInteger);
@@ -29,7 +29,7 @@ const genQuestsAndAns = () => {
 const questsAndAns = genQuestsAndAns();
 
 const launchBrainGCDGame = () => {
-  BL.launchGameCore(mainQuestion, questsAndAns);
+  BL.startGame(mainQuestion, questsAndAns);
 };
 
 export default launchBrainGCDGame;

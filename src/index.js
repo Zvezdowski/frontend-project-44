@@ -17,7 +17,7 @@ export const getRandomInteger = () => {
 
 export const isItVictory = (winsCounter, lastLvlIndex) => winsCounter === lastLvlIndex;
 
-export const launchGameCore = (mainQuestion, questsAndAns) => {
+export const startGame = (mainQuestion, questsAndAns) => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log(mainQuestion);

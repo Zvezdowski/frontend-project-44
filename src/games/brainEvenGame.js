@@ -19,7 +19,7 @@ const genQuestsAndAns = () => {
 const questsAndAns = genQuestsAndAns();
 
 const launchBrainEvenGame = () => {
-  BL.launchGameCore(mainQuestion, questsAndAns);
+  BL.startGame(mainQuestion, questsAndAns);
 };
 
 export default launchBrainEvenGame;

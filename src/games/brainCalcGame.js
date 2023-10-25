@@ -19,7 +19,7 @@ const getRandomOperator = () => {
 
 const genQuestsAndAns = () => {
   const questsAndAns = BL.matrixDefinition;
-  for (let i = 0; i < BL.numberOfAttempts; i += 1) {
+  for (let i = 0; i <= BL.lastLevelIndex; i += 1) {
     const firstInteger = BL.getRandomInteger();
     const secondInteger = BL.getRandomInteger();
     const operator = getRandomOperator();
@@ -42,7 +42,7 @@ const genQuestsAndAns = () => {
 const questsAndAns = genQuestsAndAns();
 
 const launchBrainCalcGame = () => {
-  BL.launchGameCore(mainQuestion, questsAndAns);
+  BL.startGame(mainQuestion, questsAndAns);
 };
 
 export default launchBrainCalcGame;

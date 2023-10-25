@@ -4,7 +4,7 @@ const mainQuestion = 'What number is missing in the progression?';
 
 const genQuestsAndAns = () => {
   const questsAndAns = BL.matrixDefinition;
-  for (let i = 0; i < BL.numberOfAttempts; i += 1) {
+  for (let i = 0; i <= BL.lastLevelIndex; i += 1) {
     const progressionLength = Math.floor(Math.random() * 6) + 5;
     const missingElementIndex = Math.floor(Math.random() * progressionLength);
     const progressionStep = BL.getRandomInteger();
@@ -28,7 +28,7 @@ const genQuestsAndAns = () => {
 const questsAndAns = genQuestsAndAns();
 
 const launchBrainProgressionGame = () => {
-  BL.launchGameCore(mainQuestion, questsAndAns);
+  BL.startGame(mainQuestion, questsAndAns);
 };
 
 export default launchBrainProgressionGame;

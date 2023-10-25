@@ -13,7 +13,7 @@ const definePrimeNum = (theNumber) => {
 
 const genQuestsAndAns = () => {
   const questsAndAns = BL.matrixDefinition;
-  for (let i = 0; i < BL.numberOfAttempts; i += 1) {
+  for (let i = 0; i <= BL.lastLevelIndex; i += 1) {
     const theNumber = BL.getRandomInteger();
     const rightAnswer = definePrimeNum(theNumber);
     const question = theNumber;
@@ -26,7 +26,7 @@ const genQuestsAndAns = () => {
 const questsAndAns = genQuestsAndAns();
 
 const launchBrainPrimeGame = () => {
-  BL.launchGameCore(mainQuestion, questsAndAns);
+  BL.startGame(mainQuestion, questsAndAns);
 };
 
 export default launchBrainPrimeGame;
