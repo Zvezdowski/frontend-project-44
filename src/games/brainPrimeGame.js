@@ -17,7 +17,12 @@ const genQuestsAndAns = () => {
   const questsAndAns = bL.matrixDefinition;
   for (let i = 0; i <= bL.lastLevelIndex; i += 1) {
     const number = getRandomInteger();
-    const rightAnswer = isPrime(number) ? 'yes' : 'no';
+    let rightAnswer;
+    if (isPrime(number)) {
+      rightAnswer = 'yes';
+    } else {
+      rightAnswer = 'no';
+    }
     const question = number;
     questsAndAns[0].push(question);
     questsAndAns[1].push(rightAnswer);
