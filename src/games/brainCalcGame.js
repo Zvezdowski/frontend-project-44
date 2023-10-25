@@ -1,27 +1,17 @@
 import * as BL from '../index.js'; //       BL means BrainLogic
+import getRandomInteger from '../utils.js';
+
+const operators = ['+', '-', '*'];
 
 const mainQuestion = 'What is the result of the expression?';
 
-const getRandomOperator = () => {
-  const randomIndex = Math.floor(Math.random() * 3) + 1;
-
-  switch (randomIndex) {
-    case 1:
-      return '+';
-    case 2:
-      return '-';
-    case 3:
-      return '*';
-    default:
-      return 'switch error';
-  }
-};
+const getRandomOperator = () => operators[getRandomInteger(0, 2)];
 
 const genQuestsAndAns = () => {
   const questsAndAns = BL.matrixDefinition;
   for (let i = 0; i <= BL.lastLevelIndex; i += 1) {
-    const firstInteger = BL.getRandomInteger();
-    const secondInteger = BL.getRandomInteger();
+    const firstInteger = getRandomInteger(0, BL.maxRandomInteger);
+    const secondInteger = getRandomInteger(0, BL.maxRandomInteger);
     const operator = getRandomOperator();
 
     let rightAnswer;

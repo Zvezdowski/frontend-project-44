@@ -8,14 +8,11 @@ export const greet = () => {
 
 export const lastLevelIndex = 2;
 
+export const maxRandomInteger = 100;
+
 export const matrixDefinition = [[], []];
 
-export const getRandomInteger = () => {
-  const randomInteger = Math.floor(Math.random() * 100) + 1;
-  return randomInteger;
-};
-
-export const isItVictory = (winsCounter, lastLvlIndex) => winsCounter === lastLvlIndex;
+const isItVictory = (winsCounter, lastLvlIndex) => winsCounter === lastLvlIndex;
 
 export const startGame = (mainQuestion, questsAndAns) => {
   const userName = readlineSync.question('May I have your name? ');

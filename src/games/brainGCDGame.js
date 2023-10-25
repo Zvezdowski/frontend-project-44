@@ -1,4 +1,5 @@
 import * as BL from '../index.js';
+import getRandomInteger from '../utils.js';
 
 const mainQuestion = 'Find the greatest common divisor of given numbers.';
 
@@ -16,8 +17,8 @@ const findGcd = (firstInteger, secondInteger) => {
 const genQuestsAndAns = () => {
   const questsAndAns = BL.matrixDefinition;
   for (let i = 0; i <= BL.lastLevelIndex; i += 1) {
-    const firstInteger = BL.getRandomInteger();
-    const secondInteger = BL.getRandomInteger();
+    const firstInteger = getRandomInteger(0, BL.maxRandomInteger);
+    const secondInteger = getRandomInteger(0, BL.maxRandomInteger);
     const rightAnswer = findGcd(firstInteger, secondInteger);
     const question = (`${firstInteger} ${secondInteger}`);
     questsAndAns[0].push(question);
