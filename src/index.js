@@ -8,8 +8,6 @@ export const greet = () => {
 
 export const lastLevelIndex = 2;
 
-export const maxRandomInteger = 100;
-
 export const matrixDefinition = [[], []];
 
 const isItVictory = (winsCounter, lastLvlIndex) => winsCounter === lastLvlIndex;

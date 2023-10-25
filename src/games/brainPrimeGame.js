@@ -1,4 +1,4 @@
-import * as BL from '../index.js';
+import * as bL from '../index.js';
 import getRandomInteger from '../utils.js';
 
 const mainQuestion = 'Answer "yes" if given number is prime. Otherwise answer "no".';
@@ -14,9 +14,9 @@ const isPrime = (number) => {
 };
 
 const genQuestsAndAns = () => {
-  const questsAndAns = BL.matrixDefinition;
-  for (let i = 0; i <= BL.lastLevelIndex; i += 1) {
-    const number = getRandomInteger(0, BL.maxRandomInteger);
+  const questsAndAns = bL.matrixDefinition;
+  for (let i = 0; i <= bL.lastLevelIndex; i += 1) {
+    const number = getRandomInteger();
     const rightAnswer = isPrime(number) ? 'yes' : 'no';
     const question = number;
     questsAndAns[0].push(question);
@@ -28,7 +28,7 @@ const genQuestsAndAns = () => {
 const questsAndAns = genQuestsAndAns();
 
 const launchBrainPrimeGame = () => {
-  BL.startGame(mainQuestion, questsAndAns);
+  bL.startGame(mainQuestion, questsAndAns);
 };
 
 export default launchBrainPrimeGame;
