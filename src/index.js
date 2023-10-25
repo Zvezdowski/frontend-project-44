@@ -10,8 +10,6 @@ export const lastLevelIndex = 2;
 
 export const matrixDefinition = [[], []];
 
-const isItVictory = (winsCounter, lastLvlIndex) => winsCounter === lastLvlIndex;
-
 export const startGame = (mainQuestion, questsAndAns) => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
@@ -23,7 +21,7 @@ export const startGame = (mainQuestion, questsAndAns) => {
     if (userAnswer === questsAndAns[1][i]) {
       console.log('Correct!');
 
-      if (isItVictory(i, lastLevelIndex)) console.log(`Congratulations, ${userName}!`);
+      if (i === lastLevelIndex) console.log(`Congratulations, ${userName}!`);
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${questsAndAns[1][i]}'.\nLet's try again, ${userName}!`);
       break;
