@@ -22,7 +22,7 @@ const genQuestsAndAns = () => {
     const rightAnswer = findGcd(firstInteger, secondInteger);
     const question = (`${firstInteger} ${secondInteger}`);
     questsAndAns[0].push(question);
-    questsAndAns[1].push(rightAnswer.toString());
+    questsAndAns[1].push(rightAnswer.toString(10));
   }
   return questsAndAns;
 };
