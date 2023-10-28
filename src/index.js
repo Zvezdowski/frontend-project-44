@@ -1,23 +1,23 @@
 import readlineSync from 'readline-sync';
 
-export const lastLevelIndex = 2;
+export const maxRoundsCount = 2;
 
 export const matrixDefinition = [[], []];
 
-export const startGame = (mainQuestion, questsAndAns) => {
+export const startGame = (description, questsAndAnswers) => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
-  console.log(mainQuestion);
+  console.log(description);
 
-  for (let i = 0; i <= lastLevelIndex; i += 1) {
-    console.log(`Question: ${questsAndAns[0][i]}`);
+  for (let i = 0; i <= maxRoundsCount; i += 1) {
+    console.log(`Question: ${questsAndAnswers[0][i]}`);
     const userAnswer = readlineSync.question('Your answer: ');
-    if (userAnswer === questsAndAns[1][i]) {
+    if (userAnswer === questsAndAnswers[1][i]) {
       console.log('Correct!');
 
-      if (i === lastLevelIndex) console.log(`Congratulations, ${userName}!`);
+      if (i === maxRoundsCount) console.log(`Congratulations, ${userName}!`);
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${questsAndAns[1][i]}'.\nLet's try again, ${userName}!`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${questsAndAnswers[1][i]}'.\nLet's try again, ${userName}!`);
       break;
     }
   }

@@ -1,7 +1,7 @@
 import * as bL from '../index.js';
 import getRandomInteger from '../utils.js';
 
-const mainQuestion = 'Find the greatest common divisor of given numbers.';
+const description = 'Find the greatest common divisor of given numbers.';
 
 const findGcd = (firstInteger, secondInteger) => {
   const maxPossibleGcd = Math.min(firstInteger, secondInteger);
@@ -15,22 +15,22 @@ const findGcd = (firstInteger, secondInteger) => {
 };
 
 const genQuestsAndAns = () => {
-  const questsAndAns = bL.matrixDefinition;
-  for (let i = 0; i <= bL.lastLevelIndex; i += 1) {
+  const questsAndAnswers = bL.matrixDefinition;
+  for (let i = 0; i <= bL.maxRoundsCount; i += 1) {
     const firstInteger = getRandomInteger();
     const secondInteger = getRandomInteger();
     const rightAnswer = findGcd(firstInteger, secondInteger);
     const question = (`${firstInteger} ${secondInteger}`);
-    questsAndAns[0].push(question);
-    questsAndAns[1].push(rightAnswer.toString());
+    questsAndAnswers[0].push(question);
+    questsAndAnswers[1].push(rightAnswer.toString());
   }
-  return questsAndAns;
+  return questsAndAnswers;
 };
 
-const questsAndAns = genQuestsAndAns();
+const questsAndAnswers = genQuestsAndAns();
 
 const launchBrainGCDGame = () => {
-  bL.startGame(mainQuestion, questsAndAns);
+  bL.startGame(description, questsAndAnswers);
 };
 
 export default launchBrainGCDGame;

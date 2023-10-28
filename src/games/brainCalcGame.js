@@ -3,7 +3,7 @@ import getRandomInteger from '../utils.js';
 
 const operators = ['+', '-', '*'];
 
-const mainQuestion = 'What is the result of the expression?';
+const description = 'What is the result of the expression?';
 
 const getRandomOperator = () => operators[getRandomInteger(0, 2)];
 
@@ -20,8 +20,8 @@ const calculate = (firstInteger, secondInteger, operator) => {
 };
 
 const genQuestsAndAns = () => {
-  const questsAndAns = bL.matrixDefinition;
-  for (let i = 0; i <= bL.lastLevelIndex; i += 1) {
+  const questsAndAnswers = bL.matrixDefinition;
+  for (let i = 0; i <= bL.maxRoundsCount; i += 1) {
     const firstInteger = getRandomInteger();
     const secondInteger = getRandomInteger();
     const operator = getRandomOperator();
@@ -29,16 +29,16 @@ const genQuestsAndAns = () => {
     const rightAnswer = calculate(firstInteger, secondInteger, operator);
 
     const question = `${firstInteger} ${operator} ${secondInteger}`;
-    questsAndAns[0].push(question);
-    questsAndAns[1].push(rightAnswer.toString());
+    questsAndAnswers[0].push(question);
+    questsAndAnswers[1].push(rightAnswer.toString());
   }
-  return questsAndAns;
+  return questsAndAnswers;
 };
 
-const questsAndAns = genQuestsAndAns();
+const questsAndAnswers = genQuestsAndAns();
 
 const launchBrainCalcGame = () => {
-  bL.startGame(mainQuestion, questsAndAns);
+  bL.startGame(description, questsAndAnswers);
 };
 
 export default launchBrainCalcGame;

@@ -1,26 +1,26 @@
 import * as bL from '../index.js';
 import getRandomInteger from '../utils.js';
 
-const mainQuestion = 'Answer "yes" if the number is even, otherwise answer "no"';
+const description = 'Answer "yes" if the number is even, otherwise answer "no"';
 
 const isEven = (num) => num % 2 === 0;
 
 const genQuestsAndAns = () => {
-  const questsAndAns = bL.matrixDefinition;
-  for (let i = 0; i <= bL.lastLevelIndex; i += 1) {
+  const questsAndAnswers = bL.matrixDefinition;
+  for (let i = 0; i <= bL.maxRoundsCount; i += 1) {
     const randomInteger = getRandomInteger();
     const rightAnswer = isEven(randomInteger) ? 'yes' : 'no';
     const question = randomInteger;
-    questsAndAns[0].push(question);
-    questsAndAns[1].push(rightAnswer);
+    questsAndAnswers[0].push(question);
+    questsAndAnswers[1].push(rightAnswer);
   }
-  return questsAndAns;
+  return questsAndAnswers;
 };
 
-const questsAndAns = genQuestsAndAns();
+const questsAndAnswers = genQuestsAndAns();
 
 const launchBrainEvenGame = () => {
-  bL.startGame(mainQuestion, questsAndAns);
+  bL.startGame(description, questsAndAnswers);
 };
 
 export default launchBrainEvenGame;
