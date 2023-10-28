@@ -4,20 +4,20 @@ export const maxRoundsCount = 2;
 
 export const matrixDefinition = [[], []];
 
-export const startGame = (description, questsAndAnswers) => {
+export const startGame = (description, [questions, answers]) => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log(description);
 
   for (let i = 0; i <= maxRoundsCount; i += 1) {
-    console.log(`Question: ${questsAndAnswers[0][i]}`);
+    console.log(`Question: ${questions[i]}`);
     const userAnswer = readlineSync.question('Your answer: ');
-    if (userAnswer === questsAndAnswers[1][i]) {
+    if (userAnswer === answers[i]) {
       console.log('Correct!');
 
       if (i === maxRoundsCount) console.log(`Congratulations, ${userName}!`);
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${questsAndAnswers[1][i]}'.\nLet's try again, ${userName}!`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answers[i]}'.\nLet's try again, ${userName}!`);
       break;
     }
   }

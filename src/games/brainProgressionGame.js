@@ -1,4 +1,4 @@
-import * as bL from '../index.js';
+import { matrixDefinition, maxRoundsCount, startGame } from '../index.js';
 import getRandomInteger from '../utils.js';
 
 const description = 'What number is missing in the progression?';
@@ -6,9 +6,9 @@ const description = 'What number is missing in the progression?';
 const minProgressionLength = 5;
 const maxProgressionLength = 10;
 
-const genQuestsAndAns = () => {
-  const questsAndAnswers = bL.matrixDefinition;
-  for (let i = 0; i <= bL.maxRoundsCount; i += 1) {
+const genQuestsAndAnswers = () => {
+  const questsAndAnswers = matrixDefinition;
+  for (let i = 0; i <= maxRoundsCount; i += 1) {
     const progressionLength = getRandomInteger(minProgressionLength, maxProgressionLength);
     const missingElementIndex = getRandomInteger(0, progressionLength - 1);
     const progressionStep = getRandomInteger();
@@ -29,10 +29,10 @@ const genQuestsAndAns = () => {
   return questsAndAnswers;
 };
 
-const questsAndAnswers = genQuestsAndAns();
+const questsAndAnswers = genQuestsAndAnswers();
 
 const launchBrainProgressionGame = () => {
-  bL.startGame(description, questsAndAnswers);
+  startGame(description, questsAndAnswers);
 };
 
 export default launchBrainProgressionGame;
