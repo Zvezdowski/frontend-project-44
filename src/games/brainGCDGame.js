@@ -4,11 +4,13 @@ import getRandomInteger from '../utils.js';
 const description = 'Find the greatest common divisor of given numbers.';
 
 const findGcd = (firstInteger, secondInteger) => {
-  const maxPossibleGcd = Math.min(firstInteger, secondInteger);
+  const impossibleDivisor = 0;
+  const maxPossibleDivisor = Math.min(firstInteger, secondInteger);
   let gcd = 1;
-  for (let j = 1; j <= maxPossibleGcd; j += 1) {
-    if ((firstInteger % j === 0) && (secondInteger % j === 0)) {
-      gcd = j;
+  if (maxPossibleDivisor === impossibleDivisor) return gcd;
+  for (let i = 1; i < maxPossibleDivisor; i += 1) {
+    if (firstInteger % i === 0 && secondInteger % i === 0) {
+      gcd = i;
     }
   }
   return gcd;
