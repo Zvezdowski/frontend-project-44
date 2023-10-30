@@ -22,7 +22,7 @@ export const startGame = (description, [questions, answers]) => {
   console.log(`Hello, ${userName}!`);
   console.log(description);
 
-  for (let i = 0; i < maxRoundsCount; i += 1) {
+  for (let i = 1; i <= maxRoundsCount; i += 1) {
     console.log(`Question: ${questions[i]}`);
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer === answers[i]) {
