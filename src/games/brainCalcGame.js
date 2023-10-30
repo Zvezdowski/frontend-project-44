@@ -16,13 +16,13 @@ const calculate = (firstInteger, secondInteger, operator) => {
     case '*':
       return firstInteger * secondInteger;
     default:
-      return 'Switch error';
+      throw new Error(`Unknown operator: '${operator}'!`);
   }
 };
 
-const genQuestsAndAnswers = () => {
-  const questsAndAnswers = matrixDefinition;
-  for (let i = 0; i <= maxRoundsCount; i += 1) {
+const genQuestionsAndAnswers = () => {
+  const questionsAndAnswers = matrixDefinition;
+  for (let i = 0; i < maxRoundsCount; i += 1) {
     const firstInteger = getRandomInteger();
     const secondInteger = getRandomInteger();
     const operator = getRandomOperator();
@@ -30,16 +30,16 @@ const genQuestsAndAnswers = () => {
     const rightAnswer = calculate(firstInteger, secondInteger, operator);
 
     const question = `${firstInteger} ${operator} ${secondInteger}`;
-    questsAndAnswers[0].push(question);
-    questsAndAnswers[1].push(rightAnswer.toString());
+    questionsAndAnswers[0].push(question);
+    questionsAndAnswers[1].push(rightAnswer.toString());
   }
-  return questsAndAnswers;
+  return questionsAndAnswers;
 };
 
-const questsAndAnswers = genQuestsAndAnswers();
+const questionsAndAnswers = genQuestionsAndAnswers();
 
 const launchBrainCalcGame = () => {
-  startGame(description, questsAndAnswers);
+  startGame(description, questionsAndAnswers);
 };
 
 export default launchBrainCalcGame;

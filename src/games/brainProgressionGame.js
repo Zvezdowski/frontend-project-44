@@ -13,9 +13,9 @@ const genProgression = (step, firstElement, length) => {
   return progression;
 };
 
-const genQuestsAndAnswers = () => {
-  const questsAndAnswers = matrixDefinition;
-  for (let i = 0; i <= maxRoundsCount; i += 1) {
+const genQuestionsAndAnswers = () => {
+  const questionsAndAnswers = matrixDefinition;
+  for (let i = 0; i < maxRoundsCount; i += 1) {
     const progressionLength = getRandomInteger(minProgressionLength, maxProgressionLength);
     const missingElementIndex = getRandomInteger(0, progressionLength - 1);
     const progressionStep = getRandomInteger();
@@ -27,16 +27,16 @@ const genQuestsAndAnswers = () => {
 
     const question = progression.join(' ');
 
-    questsAndAnswers[0].push(question);
-    questsAndAnswers[1].push(rightAnswer);
+    questionsAndAnswers[0].push(question);
+    questionsAndAnswers[1].push(rightAnswer);
   }
-  return questsAndAnswers;
+  return questionsAndAnswers;
 };
 
-const questsAndAnswers = genQuestsAndAnswers();
+const questionsAndAnswers = genQuestionsAndAnswers();
 
 const launchBrainProgressionGame = () => {
-  startGame(description, questsAndAnswers);
+  startGame(description, questionsAndAnswers);
 };
 
 export default launchBrainProgressionGame;

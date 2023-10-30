@@ -1,20 +1,20 @@
 import readlineSync from 'readline-sync';
 import getRandomInteger from './utils.js';
 
-export const maxRoundsCount = 2;
+export const maxRoundsCount = 3;
 
 export const matrixDefinition = [[], []];
 
-export const genQuestsAndAnswersByPredicate = (predicate) => {
-  const questsAndAnswers = matrixDefinition;
-  for (let i = 0; i <= maxRoundsCount; i += 1) {
+export const genQuestionsAndAnswersByPredicate = (predicate) => {
+  const questionsAndAnswers = matrixDefinition;
+  for (let i = 0; i < maxRoundsCount; i += 1) {
     const randomInteger = getRandomInteger();
     const rightAnswer = predicate(randomInteger) ? 'yes' : 'no';
     const question = randomInteger;
-    questsAndAnswers[0].push(question);
-    questsAndAnswers[1].push(rightAnswer);
+    questionsAndAnswers[0].push(question);
+    questionsAndAnswers[1].push(rightAnswer);
   }
-  return questsAndAnswers;
+  return questionsAndAnswers;
 };
 
 export const startGame = (description, [questions, answers]) => {
@@ -22,7 +22,7 @@ export const startGame = (description, [questions, answers]) => {
   console.log(`Hello, ${userName}!`);
   console.log(description);
 
-  for (let i = 0; i <= maxRoundsCount; i += 1) {
+  for (let i = 0; i < maxRoundsCount; i += 1) {
     console.log(`Question: ${questions[i]}`);
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer === answers[i]) {

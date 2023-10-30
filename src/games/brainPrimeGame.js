@@ -1,4 +1,4 @@
-import { startGame, genQuestsAndAnswersByPredicate } from '../index.js';
+import { startGame, genQuestionsAndAnswersByPredicate } from '../index.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -12,10 +12,10 @@ const isPrime = (number) => {
   return true;
 };
 
-const questsAndAnswers = genQuestsAndAnswersByPredicate(isPrime);
+const questionsAndAnswers = genQuestionsAndAnswersByPredicate(isPrime);
 
 const launchBrainPrimeGame = () => {
-  startGame(description, questsAndAnswers);
+  startGame(description, questionsAndAnswers);
 };
 
 export default launchBrainPrimeGame;
