@@ -6,8 +6,8 @@ const minProgressionLength = 5;
 const maxProgressionLength = 10;
 
 const genProgression = (step, firstElement, length) => {
-  const progression = [].push(firstElement);
-  for (let i = 1; i <= length; i += 1) {
+  const progression = [firstElement];
+  for (let i = 0; i < length; i += 1) {
     progression.push(progression[i] + step);
   }
   return progression;
