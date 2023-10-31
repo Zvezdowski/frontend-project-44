@@ -22,17 +22,19 @@ const calculate = (firstInteger, secondInteger, operator) => {
 
 const genQuestionsAndAnswers = () => {
   const questionsAndAnswers = matrixDefinition;
-  for (let i = 0; i < maxRoundsCount; i += 1) {
+  for (let i = 1; i <= maxRoundsCount; i += 1) {
+    console.log('i = ', i);
     const firstInteger = getRandomInteger();
     const secondInteger = getRandomInteger();
     const operator = getRandomOperator();
-
+console.log(firstInteger, operator, secondInteger);
     const rightAnswer = calculate(firstInteger, secondInteger, operator);
 
     const question = `${firstInteger} ${operator} ${secondInteger}`;
     questionsAndAnswers[0].push(question);
     questionsAndAnswers[1].push(rightAnswer.toString());
   }
+  console.log(questionsAndAnswers);
   return questionsAndAnswers;
 };
 
