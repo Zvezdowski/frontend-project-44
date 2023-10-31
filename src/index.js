@@ -7,7 +7,7 @@ export const matrixDefinition = [[], []];
 
 export const genQuestionsAndAnswersByPredicate = (predicate) => {
   const questionsAndAnswers = matrixDefinition;
-  for (let i = 0; i < maxRoundsCount; i += 1) {
+  for (let i = 1; i <= maxRoundsCount; i += 1) {
     const randomInteger = getRandomInteger();
     const rightAnswer = predicate(randomInteger) ? 'yes' : 'no';
     const question = randomInteger;
