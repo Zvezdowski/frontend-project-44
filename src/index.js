@@ -22,15 +22,15 @@ export const startGame = (description, [questions, answers]) => {
   console.log(`Hello, ${userName}!`);
   console.log(description);
 
-  for (let i = 0; i < maxRoundsCount; i += 1) {
-    console.log(`Question: ${questions[i]}`);
+  for (let i = 1; i <= maxRoundsCount; i += 1) {
+    console.log(`Question: ${questions[i - 1]}`);
     const userAnswer = readlineSync.question('Your answer: ');
-    if (userAnswer === answers[i]) {
+    if (userAnswer === answers[i - 1]) {
       console.log('Correct!');
 
       if (i === maxRoundsCount) console.log(`Congratulations, ${userName}!`);
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answers[i]}'.\nLet's try again, ${userName}!`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answers[i - 1]}'.\nLet's try again, ${userName}!`);
       break;
     }
   }
