@@ -16,8 +16,10 @@ const findGcd = (firstInteger, secondInteger) => {
 };
 
 const getQuestionAndAnswer = () => {
-  const question = getRandomInteger();
-  const answer = findGcd(question).toString();
+  const firstInteger = getRandomInteger();
+  const secondInteger = getRandomInteger();
+  const question = `${firstInteger} ${secondInteger}`;
+  const answer = findGcd(firstInteger, secondInteger).toString();
   return [question, answer];
 };
 
