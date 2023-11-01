@@ -1,37 +1,26 @@
 import readlineSync from 'readline-sync';
-import getRandomInteger from './utils.js';
 
-export const maxRoundsCount = 3;
+const maxRoundsCount = 3;
 
-export const matrixDefinition = [[], []];
-
-export const genQuestionsAndAnswersByPredicate = (predicate) => {
-  const questionsAndAnswers = matrixDefinition;
-  for (let i = 1; i <= maxRoundsCount; i += 1) {
-    const randomInteger = getRandomInteger();
-    const rightAnswer = predicate(randomInteger) ? 'yes' : 'no';
-    const question = randomInteger;
-    questionsAndAnswers[0].push(question);
-    questionsAndAnswers[1].push(rightAnswer);
-  }
-  return questionsAndAnswers;
-};
-
-export const startGame = (description, [questions, answers]) => {
+const startGame = (description, getquestionAndAnswer) => {
+  console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log(description);
 
   for (let i = 1; i <= maxRoundsCount; i += 1) {
-    console.log(`Question: ${questions[i - 1]}`);
+    const [question, answer] = getquestionAndAnswer();
+    console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
-    if (userAnswer === answers[i - 1]) {
+    if (userAnswer === answer) {
       console.log('Correct!');
-
-      if (i === maxRoundsCount) console.log(`Congratulations, ${userName}!`);
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answers[i - 1]}'.\nLet's try again, ${userName}!`);
-      break;
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was ${answer}`);
+      console.log(`Let's try again, ${userName}!`);
+      return;
     }
   }
+  console.log(`Congratulations, ${userName}!`);
 };
+
+export default startGame;

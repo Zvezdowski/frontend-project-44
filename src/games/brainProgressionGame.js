@@ -1,11 +1,11 @@
-import { matrixDefinition, maxRoundsCount, startGame } from '../index.js';
+import startGame from '../index.js';
 import getRandomInteger from '../utils.js';
 
 const description = 'What number is missing in the progression?';
 const minProgressionLength = 5;
 const maxProgressionLength = 10;
 
-const genProgression = (step, firstElement, length) => {
+const getProgression = (step, firstElement, length) => {
   const progression = [firstElement];
   for (let i = 0; i < length; i += 1) {
     progression.push(progression[i] + step);
@@ -13,30 +13,23 @@ const genProgression = (step, firstElement, length) => {
   return progression;
 };
 
-const genQuestionsAndAnswers = () => {
-  const questionsAndAnswers = matrixDefinition;
-  for (let i = 0; i < maxRoundsCount; i += 1) {
-    const progressionLength = getRandomInteger(minProgressionLength, maxProgressionLength);
-    const missingElementIndex = getRandomInteger(0, progressionLength - 1);
-    const progressionStep = getRandomInteger();
+const getQuestionAndAnswer = () => {
+  const progressionLength = getRandomInteger(minProgressionLength, maxProgressionLength);
+  const missingElementIndex = getRandomInteger(0, progressionLength - 1);
+  const progressionStep = getRandomInteger();
 
-    const progression = genProgression(progressionStep, getRandomInteger(), progressionLength);
+  const progression = getProgression(progressionStep, getRandomInteger(), progressionLength);
 
-    const rightAnswer = progression[missingElementIndex].toString();
-    progression[missingElementIndex] = '..';
+  const answer = progression[missingElementIndex].toString();
+  progression[missingElementIndex] = '..';
 
-    const question = progression.join(' ');
+  const question = progression.join(' ');
 
-    questionsAndAnswers[0].push(question);
-    questionsAndAnswers[1].push(rightAnswer);
-  }
-  return questionsAndAnswers;
+  return [question, answer];
 };
 
-const questionsAndAnswers = genQuestionsAndAnswers();
-
 const launchBrainProgressionGame = () => {
-  startGame(description, questionsAndAnswers);
+  startGame(description, getQuestionAndAnswer);
 };
 
 export default launchBrainProgressionGame;

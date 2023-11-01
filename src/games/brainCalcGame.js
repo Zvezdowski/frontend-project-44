@@ -1,11 +1,11 @@
-import { matrixDefinition, maxRoundsCount, startGame } from '../index.js';
+import startGame from '../index.js';
 import getRandomInteger from '../utils.js';
 
 const operators = ['+', '-', '*'];
 
 const description = 'What is the result of the expression?';
 
-const getRandomOperator = () => operators[getRandomInteger(0, 2)];
+const getRandomOperator = () => operators[getRandomInteger(0, operators.length - 1)];
 
 const calculate = (firstInteger, secondInteger, operator) => {
   switch (operator) {
@@ -20,25 +20,17 @@ const calculate = (firstInteger, secondInteger, operator) => {
   }
 };
 
-const genQuestionsAndAnswers = () => {
-  const questionsAndAnswers = matrixDefinition;
-  for (let i = 1; i <= maxRoundsCount; i += 1) {
-    const firstInteger = getRandomInteger();
-    const secondInteger = getRandomInteger();
-    const operator = getRandomOperator();
-    const rightAnswer = calculate(firstInteger, secondInteger, operator);
-
-    const question = `${firstInteger} ${operator} ${secondInteger}`;
-    questionsAndAnswers[0].push(question);
-    questionsAndAnswers[1].push(rightAnswer.toString());
-  }
-  return questionsAndAnswers;
+const getQuestionAndAnswer = () => {
+  const firstInteger = getRandomInteger();
+  const secondInteger = getRandomInteger();
+  const operator = getRandomOperator();
+  const question = (`${firstInteger} ${operator} ${secondInteger}`);
+  const answer = calculate(firstInteger, secondInteger, operator).toString();
+  return [question, answer];
 };
 
-const questionsAndAnswers = genQuestionsAndAnswers();
-
 const launchBrainCalcGame = () => {
-  startGame(description, questionsAndAnswers);
+  startGame(description, getQuestionAndAnswer);
 };
 
 export default launchBrainCalcGame;
