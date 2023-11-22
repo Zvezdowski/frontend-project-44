@@ -7,7 +7,7 @@ Brain Games is compilation of five different math games. Challenge your brain.
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/52911390035689c80d58/maintainability)](https://codeclimate.com/github/Zvezdowski/frontend-project-44/maintainability)
 
-### Systen requirements
+### System requirements
 
 node.js: v20.7.0 
 
