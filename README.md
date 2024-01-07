@@ -17,8 +17,6 @@ node.js: v20.7.0
 
 `make install`
 
-`npm link`
-
 [Installation example](https://asciinema.org/a/0BRqUSfUp8NqSC3THE8B6wdUN)
 
 ### Usage:
